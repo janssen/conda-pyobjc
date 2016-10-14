@@ -1,0 +1,63 @@
+package:
+  name: pyobjc-core
+  version: "3.1.1"
+
+source:
+  fn: pyobjc-core-3.1.1.tar.gz
+  url: https://pypi.python.org/packages/44/ef/d384326d28d34ef21aee652b016aabc5c4e5b135cf823c298a2ed021b354/pyobjc-core-3.1.1.tar.gz
+  md5: e071bc40a3341a97d2c91c49fc3783cb
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - pyobjc-core = pyobjc-core:main
+    #
+    # Would create an entry point called pyobjc-core that calls pyobjc-core.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  # Python imports
+  imports:
+    - PyObjCTools
+    - objc
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: http://pyobjc.sourceforge.net/
+  license: MIT License
+  summary: 'Python<->ObjC Interoperability Module'
+  license_family: MIT
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
